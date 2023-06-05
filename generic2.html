@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>NLP Page - Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Natural Language Processing</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">My Portfolio</a></li>
+							<li class="active"><a href="generic2.html">Reddit Politics</a></li>
+							
+						</ul>
+						<ul class="icons">
+							<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
+							<li><a href="https://github.com/JesseAnnear" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date"></span>
+									<h1>Classifying Political Reddit Posts by Politcal Lean<br />
+									</h1>
+									<p>In this project, I used a dataset found on kaggle which scraped the social news platform reddit for the use of natural language processing. The dataset that was used was titled “Liberals vs Conservatives on Reddit”. The dataset contained subreddits and posts within each of the subreddits that were classified as either liberal or conservative.The datset can be found here: <a href = "https://www.kaggle.com/datasets/neelgajare/liberals-vs-conservatives-on-reddit-13000-posts"> DATASET</a>.
+									</p>
+									<p>The objective of this project was to find interesting patterns between the different leaning reddits and then finish off by creating a machine learning algorithm to classify whether posts are either conservative or liberal.
+									</p>
+								</header>
+								<h1>Exploration<br />
+								</h1>
+								<p>I started off by creating multiple histograms to show the diversity between each of the separate subreddits to show the difference between each of the sub-reddits and whether they are liberal or conservative.
+								</p>
+								<div class="image main"><img src="images/NumOfPosts.png" alt="" /></div>
+								<p>Interestingly enough, the classification of liberals or conservative was done entirely by looking at the Subreddit of the posts. This is interesting and may be an okay rule of thumb to use but this could cause us issues later on. This could cause issues if there is a conservative posting in a liberal reddit, this causes us to falsely classify that a conservative poster is actually a liberal one and could confuse some of our analysis.
+
+									Another issue is that some of the sub-reddits could actually pertain to both groups rather than just the one it is classified as. For example, the kaggle user who posted the dataset, classified the ‘Capitalism’ subreddit as entirely conservative, when in reality many liberal folks actually believe in capitalism or some form of restricted capitalism. While it may be true that liberals have more socialistic values, most western liberals do also believe in capitalism. The same could be true with the feminism form, it is definitely possible to be a feminist but also lean conservative.
+									
+									Generally, these classifications may loosely apply, but whenever moving forward with our analysis it's important to take things with a grain of salt.
+								</p>
+								<h1>WordLevel<br />
+								</h1>
+								<p>We started out by performing tokenization, which generally means that the text is broken down into smaller units to work with. To begin we will just look word by word, to see if there are any key differences between common words that are used between conservative or liberal classified users. Which words are used the most? Which words are used more when compared to the ladder? These are the questions we are looking to explore.
+								</p>
+								<p>To start we are going to look at the frequency of words that have been used. We have only counted each word once per post that way if one post had mentioned biden 10 times it would only be counted once.</p>
+								<div class="image main"><img src="images/histo.png" alt="" /></div>																							
+								<p>If we ignore that the ‘people’ word was used the most, interestingly Trump was mentioned the most in both conservative and liberal users. This appears to make sense as Trump is a very polarized individual who gets a lot of attention from both conservative who may like him and liberals who may hate him. He really is the king of attention. 
+
+									Another interesting thing is that russia-ukraine situation is mentioned much more by conservatives than it is by liberals.
+									
+									Both women and workers are mentioned more in liberal feeds which tends to make sense because that aligns more with left leaning principles.
+									
+									Capitalism is named more in the conservative group but it is important to mention that one of the conservative labeled subreddits was called capitalism so this should not be of any surprise.
+									</p>
+								<h1>Diffrence in Word Usuage<br />
+								</h1>
+								<p>Now, we are going to look at the percentage difference in the amount that words are used. So when viewing, if a blue is seen at 0.2 that means these words are seen 20% more on the liberal subreddits than their conservative counterparts. We highlighted the top 30 most common words in our whole dataset and saw the difference between the two groups.
+								</p>
+								<div class="image main"><img src="images/diff.png" alt="" /></div>								
+								<p>As we can see, this seems to better differentiate the common differences between liberals and conservatives.
+
+									Women and workers are the first two which are common talking points for rights that liberal’s believe in.
+									
+									Ukraine,Russia and Putin are the top words for conservative which seems to align as conservatives have been more critical of money that has been spent in the war.
+									</p>
+								<h1>Word Bubbles<br />
+								</h1>
+								<p>Using python, I created these fancy word bubbles that also takes a similar
+									approach to show that the more used words are scaled bigger.
+								</p>
+								
+								<div class="image main"><img src="images/wordMap.png" alt="" /></div>								
+							    <p>As we can see, similar to before, commonly used words for conservatives
+									are 'Ukraine','Russia', 'Trump','Capitalism' which seems to align with our analysis from before 
+									and have a similar result.
+								</p>
+								<div class="image main"><img src="images/lwordMap.png" alt="" /></div>
+								<p>Again, for the liberal groups we can see that words like 'women', 'worker','Trump' are actually
+									common words for the this group. This again is similar to analysis from before but has an interesting
+									visual behind it.
+								</p>
+								<h1>Sentiment Analysis<br />
+								</h1>
+								<p>Another important part of NLP is dealing with sentiment analysis. As we know, when humans read text we can interpret the different sentiment of text by our interpretation and relating to our experiences. We used the NRC lexicon to classify the different emotions on a scale and compared our two groups.
+								</p>
+								<iframe src="Sentiment_plot.html" width="100%" height="600px" frameborder="0"></iframe>
+								<p>As we can see, the emotions were shockingly similar between the two different groups.</p>
+								<h1>AFINN Lexicon<br />
+								</h1>
+								<p>Now we are going to use the AFINN lexicon to assign a score that runs between -5 and 5  with negative scores indicating negative sentiment and positive score indicating positive sentiment.</p>
+								<div class="image main"><img src="images/sent.png" alt="" /></div>
+								<p>As we can see there is not a whole lot of difference between the groups.</p>
+								
+								<h1>Machine Learning Classification<br />
+								</h1>
+								
+								<p>In order to perform classification,we are going to split the data into a training and test sets. Where each of the X 
+									are fitted using a tokenizar that assigns a value to each of the words in the post. From here we are going to compare a 
+									couple of different models and see how our accuracy goes.
+								</p>
+								<div class="image main"><img src="images/model_results.png" alt="" /></div>
+								<p>As we can see all of our models scored between 70-80% which is decent, especially 
+									when our labels weren't actually manually made and were just set based on the sub-reddit where it was posted.
+									Therefor, it is possible that our mis-classification could be due to someone making a conservative post
+									on a liberal sub-reddit or vice versa. The best model peformance was given by the standard vector machine with
+									74.9% accuracy.
+								</p>
+								<h1>Code<br />
+								</h1>
+								<p>For this project I used a combination of R and python code for our exploration and for the modeling phase I used stricly python code. I have listed the python and the R- code below.</p>
+								<h1 class="center bold">R-Code</h1>
+								
+								<!-- I want you to add in the html saved as industry_scatter.html right here so that it shows in the middle of the page -->
+								<iframe src="reddit_analysis.html" width="100%" height="600px" frameborder="0"></iframe>
+								<h1 class="center bold">Python-Code</h1>
+								<iframe src="python.html" width="100%" height="600px" frameborder="0"></iframe>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">jesseannear91@hotmail.com</p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<!-- <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li> -->
+									<li><a href="https://github.com/JesseAnnear" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+
+	</body>
+	
+</html>
