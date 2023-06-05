@@ -51,7 +51,76 @@
 
 								</header>
 								<div class="image main"><img src="images/covid-cells.jpg" alt="" /></div>
-								<h1 class="center bold">The Code</h1>
+								<p>The data for this dataset was given in fasta files.
+									FASTA (pronounced "fasta") is a common file format used in bioinformatics to represent nucleotide or protein sequences. It is a simple text-based format that allows for the storage and exchange of sequence data.
+
+									The FASTA format consists of two parts: a header and a sequence. The header line begins with a greater-than symbol ">" and is followed by a description or identifier for the sequence. The sequence itself follows the header line and can span multiple lines. It contains the actual sequence of nucleotides (A, T, G, C) or amino acids (represented by single-letter codes).
+
+									Here is an example of a FASTA entry:</p>
+								<p>sequence_identifier:ACTGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTA GCTAGCTAGCTAGCTAGCTAGCTAGCTAGC</p>	
+								<p>In this example, sequence_identifier is a unique identifier or description for the sequence. The sequence data follows on subsequent lines and can be as long as needed.
+
+									FASTA files can contain a single sequence or multiple sequences, each represented by a header and a sequence block. These files are widely used for storing biological sequence data, including DNA sequences, RNA sequences, and protein sequences. They are commonly used in genomics, proteomics, and various bioinformatics applications.
+									
+									It's important to note that the FASTA format does not include additional information such as quality scores or other metadata associated with the sequence. It is primarily used to store and exchange the raw sequence data itself. So we read the fasta files then we had to move onto 
+
+									CGR in order to numerate the numbers so we can analyse, since we can't analyse strings.
+									
+								</p>
+								<h1 class="center bold">CGR technique</h1>
+								<p>CGR is a technique commonly used in bioinformatics to analyze sequence data. It involves converting a sequence into a matrix that captures certain patterns or features present in the sequence. The process can be summarized in several steps.
+
+									First, you define the order and size of the matrix. The order represents the number of possible symbols in the sequence, such as nucleotides (A, C, G, T) for DNA or amino acids for proteins. The size of the matrix is determined as 2^k, where k is an integer that determines the size of the sliding window used for pattern detection.
+									
+									Next, you initialize the CGR matrix as a square matrix of size (2^k) x (2^k) filled with zeros. This matrix will be used to count the occurrence of specific patterns in the sequence.
+									
+									To analyze the sequence, you employ a sliding window approach. The window slides along the sequence, and at each position, you consider the current k-mer, which is a substring of length k.
+									
+									For each k-mer, you translate it into row and column indices in the CGR matrix based on the symbols in the k-mer and the order of the matrix. This translation allows you to update the corresponding entry in the CGR matrix.
+									
+									You repeat the sliding window approach for all positions in the sequence, updating the CGR matrix as you go. This process captures the frequencies or counts of specific patterns in the sequence.
+									
+									After processing the entire sequence, you may choose to normalize the CGR matrix. Normalization ensures that the values in the matrix are comparable across different sequences. Common normalization methods include dividing each element by the total count or applying other scaling techniques.
+									
+									The resulting CGR matrix represents the distribution of patterns in the sequence. It can be further analyzed or used as input for various bioinformatics analyses, such as machine learning algorithms, pattern recognition, or similarity calculations between sequences.
+									
+									It's important to note that CGR is just one of many methods to represent sequence data. It captures specific patterns and structural features but may not encompass all the information present in the sequence. The choice of representation depends on the specific application and research goals.
+									
+									
+								
+									
+									
+									
+									</p>
+								
+								<p>We then used MDS to make a three dimesional plot of all the different types of corona virus strains. Our clusters
+									didn't turn out perfectly but in the image below you can see some slight differentiation betweeen the different strains. Just a reminder that this is in three
+									dimesions but in reality our datset has many more dimesions.
+								</p>
+								<div class="image main"><img src="images/COVID_CLUSTERS.png" alt="" /></div>
+								<h1 class="center bold">Model Phase</h1>
+								<p>In our model phase, we used k-fold for our model selection phase,we first scaled our data, then we started with a SVM(Support Vector Machine). A Support Vector Machine (SVM) is a popular machine learning algorithm used for both classification and regression tasks. It is particularly effective in solving binary classification problems, where the goal is to separate data into two distinct classes.
+
+									The basic idea behind SVM is to find an optimal hyperplane that best separates the data points of different classes in a high-dimensional feature space. The hyperplane is chosen in such a way that it maximizes the margin, which is the distance between the hyperplane and the nearest data points of each class. These data points, known as support vectors, play a crucial role in defining the hyperplane.
+									
+									SVM can handle both linearly separable and non-linearly separable data. In the case of linearly separable data, a linear hyperplane can be used to separate the classes. However, if the data is not linearly separable, SVM uses a technique called the kernel trick. The kernel trick allows SVM to implicitly transform the input data into a higher-dimensional space, where a linear hyperplane can effectively separate the classes.
+									
+									The SVM algorithm aims to minimize the classification error while maximizing the margin. It achieves this by solving an optimization problem, which involves finding the hyperplane parameters that minimize a cost function subject to certain constraints. The cost function penalizes misclassifications and promotes the maximization of the margin.
+									
+									Once the SVM model is trained, it can be used to classify new, unseen data points by evaluating their position relative to the learned hyperplane. The data points on one side of the hyperplane are classified as one class, while the points on the other side are classified as the other class.
+									
+									SVM has several advantages, such as its ability to handle high-dimensional data, resistance to overfitting, and effectiveness in dealing with non-linearly separable data through the kernel trick. It is widely used in various domains, including image classification, text classification, bioinformatics, and more.
+									
+									</p>
+								<h1 class="center bold">SVM K-fold Results</h1>
+								<p>Unlike most machine learning projects, we got 100% accuract on every run in our K-fold testing of the SVM. Normally, we would 
+									then move on to trying a different machine learning algorithm but is our SVM worked so well there is no need to move on. One reason
+									it may have done so well, is because there was a lot a differentiation between the RNA of the two groups, which is surprising from our original 
+									MDS plot because in that plot there was a lot of overlap.However, despite this our SVM was able to find a hyperplane that was able to split our 
+									different types of COVID strains. 
+
+								</p>
+								<h1 class="center bold">The Python Code</h1>
 								<iframe src="COVID.html" width="100%" height="600px" frameborder="0"></iframe>
 								<p></p>
 								
