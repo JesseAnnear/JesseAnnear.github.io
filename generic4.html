@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic Page - Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Top 500 Stocks</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">My Portfolio</a></li>
+							<li class="active"><a href="generic4.html">Exploring top 500 Stocks & Modern Portfolio Theory</a></li>
+							
+						</ul>
+						<ul class="icons">
+							<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
+							<li><a href="https://github.com/JesseAnnear" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date"></span>
+									<h1> Exploring top 500 Stocks & Modern Portfolio Theory
+										 <br />
+									</h1>
+									<p>For this project I was given a dataset of the top 500 stock by total market capitilizaion. I performed explortatory data analyses
+										on the different tickers from some fundemental statistics and also technical statistics from yfinance to calcualte average varience and returns. I finally
+									concluded by explaining and performing a risk technique called Modern Portfolio Theory(MPT).  </p>
+
+								</header>
+								
+								<p> I loaded in the dataframe of the top 500 tickers with some fundemental data that came from tradingview. 
+									To start we are going to take a look at the biggest stocks by market capitilizaion by market cap. This is important because
+									the biggest stocks in the stock market move the market the most, for example if apple randomely starting droping this would effect markets more
+									than if some random company started falling. You should see some familier companies here as they are all big brands
+									and are companies that a lot of us see or use their products everyday.
+								</p>
+								<div class="image main"><img src="images/CapDist.png" alt="" /></div>
+								<h1 class="center bold">Are these companies making the most money? Are they taking on the most debt?</h1>
+								<p>In order to answer this question simply, we can take a look at the top 10 companies for revenue and for debt. As we can see
+									they are not the same companies as we seen for top market capitilization. This make sense becuse the market
+									can take into fact future expectations of profit and other things, its not nessacarily revenue that independantly picks the best stocks.
+									Below, we have the best stocks by reveneue and debt from the data that was provided by tradingview.
+								</p>
+								<div class="image main"><img src="images/FY_Rev.png" alt="" /></div>	
+								<p>As we can see for revenue there is a lot of familiar names that we would expect. For example we have technology companies like google, apple and amazon. We also see walmart which everyone knows. Interestingly, we see
+									oil companies which probably makes sense consider how high oil prices rose to in 2022. Finally, we see UNH which is an insurance company, MCK, ABC which are pharmacedicals and CVS which is very notable pharmacy.
+								</p>
+								<div class="image main"><img src="images/debt_t.png" alt="" /></div>
+								<p> Interestly, for total debt(full year) we see that AXON mobile has the most date by far. This fundemental probably makes sense becuse they are a technology and weapons manufactureer. What happened in the weapons industry lately? 
+									Well, as we all know, Russias invasion of Ukraine has made a major shift in defence spending internationally, so this may be a reason that AXON is taking on more debt to grow larger.
+								</p>
+									
+								
+								<h1 class="center bold">Returns vs Varience</h1>
+								<p>Average returns and variance are commonly used measures in finance and investment analysis to assess the performance and risk associated with stocks. Here's an explanation of why someone might use average returns and variance for stocks:
+								</p>
+								
+								<p>	
+								Average Returns: Average returns provide a measure of the stock's historical performance over a specific period. By calculating the average returns, investors can gain insights into the stock's profitability and potential to generate returns in the future. The average return is typically calculated as the arithmetic mean of the stock's historical returns over a specified time frame, such as daily, monthly, or yearly returns.
+							    </p>	
+								<p>
+								Investors and analysts use average returns for several purposes:
+							    </p>
+								<p>
+								Performance evaluation: Comparing the average returns of different stocks or investment portfolios helps assess their relative performance. Investors often seek stocks with consistently higher average returns as they indicate better profitability and potential for higher future gains.
+									Benchmarking: Average returns can be compared to benchmark indices or market averages to evaluate how a stock or portfolio has performed relative to the broader market. This analysis helps determine whether the investment has outperformed or underperformed the market as a whole.
+									Risk-reward assessment: Average returns are often used in conjunction with risk measures, such as variance or standard deviation, to assess the risk-reward trade-off of a stock. Investors typically look for stocks that offer higher average returns relative to their level of risk.
+									Variance: Variance is a statistical measure that quantifies the dispersion or volatility of a stock's returns. It provides an indication of how much the actual returns of a stock deviate from its average return. Higher variance implies greater volatility and uncertainty in the stock's price movement, while lower variance suggests more stable and predictable returns.
+								</p>	
+								
+								<p>Investors and analysts use variance for various reasons:
+								</p>	
+								
+								<p>	Risk assessment: Variance is a crucial measure of risk. It helps investors understand the potential fluctuation or volatility in a stock's returns. Higher variance implies a greater probability of large price swings, indicating higher risk. Conversely, lower variance suggests a more stable and predictable investment.
+									Portfolio diversification: Variance is used to analyze the correlation or relationship between different stocks or assets in a portfolio. By combining assets with low or negative correlation (low covariance), investors can potentially reduce the overall portfolio variance and achieve diversification benefits.
+									Efficient portfolio construction: Modern portfolio theory, developed by Nobel laureate Harry Markowitz, utilizes variance (or standard deviation) as a key input. The theory aims to construct portfolios that maximize returns for a given level of risk or minimize risk for a given level of returns. By analyzing the variances and covariances of different stocks, investors can optimize their portfolio allocation.
+									In summary, average returns and variance are essential tools for investors to assess the historical performance, risk, and potential rewards associated with stocks. These measures help investors make informed decisions about their investments, construct diversified portfolios, and manage risk effectively.
+								</p>
+								<p>	Now that we know a little bit about why average returns and variance is used lets take a look at a plot of average returns vs variance so we can see how our top 500 stocks have been peforming in the last year.</p>
+									<iframe src="interactive_plot.html" width="100%" height="600px" frameborder="0"></iframe>
+								
+								<p> If we look at the plot above, the stocks colour represents the industry the ticker belongs to and if you double click the industy label it will only show stocks out of that industry. If we hover over a scatter dot it will show the ticker, the industry it belongs to, average returns and average varience. According to this plot,
+									the best stocks are the ones that have the highest returns but the lowest varience. Modern portfolio theory works to maximize the average returns and minimize the varience but also take into account co-varience to increase diversification.
+
+								</p>
+								
+								<h1 class="center bold">Modern Porfolio Theory</h1>
+								<p>The core idea behind MPT is that an investor should not solely focus on the expected return of individual assets but also consider how their combination affects the overall risk and return of the portfolio. MPT introduces the concept of efficient portfolios, which are portfolios that offer the highest expected return for a given level of risk or the lowest risk for a given level of return.
+									MPT emphasizes the importance of diversification, as it helps reduce the overall risk of a portfolio. By combining assets with low or negative correlations, investors can smooth out the fluctuations in the portfolio's value. MPT quantifies the risk and return of individual assets and their correlations to mathematically optimize the portfolio allocation.
+									
+									
+									</p>
+								<h1 class="center bold">Simulation Method of MPT</h1>
+								<p>
+									The simulation method of Modern Portfolio Theory involves constructing a large number of randomly generated portfolios to simulate potential investment outcomes. This method is often used to estimate the risk and return characteristics of different portfolio allocations.
+									The simulation process starts by defining the set of available assets, their expected returns, standard deviations (a measure of risk), and the correlation matrix among the assets. These inputs serve as the basis for generating random returns for each asset within certain statistical assumptions. By combining the asset returns according to specified portfolio weights, a simulated portfolio return can be calculated.
+									The simulation is typically repeated thousands of times to generate a wide range of possible portfolio returns. By analyzing the distribution of these simulated returns, an investor can assess the risk and return trade-offs associated with different asset allocations. This information helps in identifying the optimal portfolio with the desired risk and return characteristics.
+									
+									
+									
+
+								</p>
+								<div class="image main"><img src="images/MPT_Sim.png" alt="" /></div>
+								<h1 class="center bold">The Optimization Method of MPT</h1>
+								<p>The optimization method of Modern Portfolio Theory involves using mathematical optimization techniques to find the portfolio allocation that maximizes return for a given level of risk or minimizes risk for a given level of return. This method relies on numerical algorithms to solve the optimization problem.
+									In this approach, the investor defines their preferences, such as the desired level of return or the acceptable level of risk. The investor also provides inputs such as expected returns, standard deviations, and correlations of the available assets. The optimization algorithm then calculates the weights for each asset that will result in the desired portfolio characteristics.
+									There are different types of optimization techniques used in MPT, with the most common being mean-variance optimization. Mean-variance optimization aims to find the portfolio with the highest expected return for a given level of risk or the lowest risk for a given level of return. Other advanced optimization techniques may incorporate additional factors, such as constraints on asset weights, transaction costs, or specific risk preferences of the investor.
+									The optimization method helps in efficiently identifying the optimal portfolio allocation based on the investor's objectives and constraints. However, it is important to note that the accuracy and reliability of optimization results heavily depend on the accuracy of the input assumptions and the model used for optimization.
+									
+								</p>
+								
+								<div class="image main"><img src="images/MPT_OBJ.png" alt="" /></div>
+
+								<h1 class="center bold">The Python Code</h1>
+								<iframe src="stock_overview.html" width="100%" height="600px" frameborder="0"></iframe>
+								<iframe src="ModernPort.html" width="100%" height="600px" frameborder="0"></iframe>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">jesseannear91@hotmail.com</p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<!-- <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li> -->
+									<li><a href="https://github.com/JesseAnnear" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
